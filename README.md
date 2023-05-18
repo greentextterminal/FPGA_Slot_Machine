@@ -3,3 +3,6 @@ This repo contains the code for a simple slot machine like game implemented via 
 
 ## Overview of Game
 The code cycles an LED which the user has to "catch" with a switch corresponding to the same LED index position during the same clock cycle in order to win. If the game is won the LEDs will all flash indicating a win until it is reset. The game can be reset and played again by pressing BTN2 (Button 2).
+
+### Clock Divider
+The onboard clock being used is 126MHz, for the purposes of the game, the same clock drives the always block which toggle the LED positions via case states. If we did not reduce the clock rate then the LEDs would toggle at the same frequency which would make make the game unplayable and to user the LEDs would toggle so quickly that it would seem as if they were all on at the same time.
